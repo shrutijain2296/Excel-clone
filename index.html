@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sheet</title>
+    <link rel="icon" type="image/x-icon" href="/images/excel.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "stylesheet" href = "style.css">
+    
+</head>
+<body>
+
+    <!-- table -->
+    <table id = "my-table">
+        <thead>
+            <div class="toolbar">
+                <div class="top_bar">
+                    <div id = "current-cell-div">
+                        <h1 id = "current-cell">No cells selected</h1>
+                    </div>
+                    <!-- font-style -->
+                    <div class="text_alinment">
+                        <button id = "bold-btn"><i class="fa-solid fa-bold"></i></button>
+                        <button id = "italics-btn"><i class="fa-solid fa-italic"></i></button>
+                        <button id = "underline-btn"><i class="fa-solid fa-underline"></i></button>
+                        <!-- text-alignment -->
+                        <button id = "left-align"><i class="fa-solid fa-align-left"></i></button>
+                        <button id = "center-align"><i class="fa-solid fa-align-center"></i></button>
+                        <button id = "right-align"><i class="fa-solid fa-align-right"></i></button>
+                    </div>
+                    
+                    <div class = "font_styling">
+                         <!-- font-size -->
+                        <select id="font-size">
+                            <option value="14px">14</option>
+                            <option value="16px">16</option>
+                            <option value="18px">18</option>
+                            <option value="20px">20</option>
+                        </select>
+                    <!-- fonts -->
+                        <select id="font-style">
+                            <option value="sans-serif">Sans-serif</option>
+                            <option value="serif">Serif</option>
+                            <option value="cursive">Cursive</option>
+                            <option value="monospace">Monospace</option>
+                        </select>
+                    </div>
+                   
+                    <div class="cut_copy_paste">
+                        <!-- copy cut paste -->
+                        <button id = "copy-btn"><i class="fa-solid fa-copy"></i></button>
+                        <button id = "cut-btn"><i class="fa-solid fa-scissors"></i></button>
+                        <button id = "paste-btn"><i class="fa-regular fa-paste"></i></button>
+                    </div>
+                    <div class="color">
+                        <!-- background-color -->
+                        <label for = "bg-color">
+                            <i class="fa-solid fa-fill-drip"></i>
+                        </label>
+                        <input type = "color" id = "bg-color">
+                
+                        <!-- Text-color -->
+                        <label for = "text-color">
+                            <i class="fa-solid fa-font"></i>
+                        </label>
+                        <input type = "color" id = "text-color">
+                    </div>
+                    
+                </div>
+                <div class="download_upload">
+                    <!-- download button -->
+                    <button onclick = "downloadJson()">
+                        Download
+                    </button>
+                    
+        
+                    <!-- upload file -->
+                    <!-- <input type = 'file' id = 'jsonFile' accept = ".json"> -->
+     
+                    <label for="jsonFile" class="upload-label">
+                        <input type="file" id="jsonFile" accept=".json">
+                    </label>
+                </div>
+            </div>
+            
+            <tr id = "table-heading-row">
+                <th></th>
+            </tr>
+        </thead>
+        <tbody id = "table-body">
+
+        </tbody>
+    </table>
+    <button id = "add-sheet-btn">Add Sheet</button>
+    <div id = "sheet-container"></div>
+    <h2 id = "sheet-num">Sheet No. 1</h2>
+    
+    <div id = "add-new-sheet">
+
+    </div>
+    <script src = "./script.js"></script>
+</body>
+</html>
